@@ -1,0 +1,97 @@
+<html>
+<head>
+    <title>CHI 2019 Workshop</title>
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <style>
+        .container_div{
+            padding: 10px;
+        }
+        
+    </style>
+
+    <script type="text/javascript">
+      var data = {
+        "id1": {
+          id: "id1",
+          image_src: "a.jpg",
+          category_1: "linear",
+          category_2: "(none)",
+        },
+
+        "id2": {
+          id: "id2",
+          image_src: "b.jpg",
+          category_1: "rotation",
+          category_2: "linear",
+        },
+      }
+
+
+
+      $(document).ready(function(){
+        for(d in data){
+          console.log(d)
+          var item = data[d]
+
+          var container_div = $("<div id='item_"+item['id']+"' class='container_div'>")
+          
+          var image_div = $("<div>").text(item['image_src'])
+          container_div.append(image_div)
+
+          var category_1_div = $("<div>").text("category_1: "+item['category_1'])
+          container_div.append(category_1_div)
+
+          var category_2_div = $("<div>").text("category_2: "+item['category_2'])
+          container_div.append(category_2_div)
+
+          
+
+          $("#items_list").append(container_div)
+        }
+      })
+    </script>
+
+</head>
+<body>
+
+ <body>
+
+
+ <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#a">A</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#b">B</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#c">C</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="container">
+      <h1> All Items </h1>
+        <div id="items_list">
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
