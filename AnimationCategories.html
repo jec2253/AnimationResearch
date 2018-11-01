@@ -1,5 +1,6 @@
 <html>
 <head>
+
     <title>Animation Metaphors</title>
     <link href="http://netdna.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" media="screen">
     <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
@@ -8,289 +9,489 @@
     <style>
         .container_div{
             padding: 10px;
+            text-align: center;
+        }
+
+        #parent {
+          padding: 50px;
+        }
+
+        #navbar {
+        overflow: hidden;
+        background-color: #333;
+        width: 100%;
+        position: fixed;
+        }
+
+        /* Navbar links */
+        #navbar a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 15px;
+          text-decoration: none;
         }
 
 
+          .dropbtn {
+          background-color: black;
+          color: white;
+          padding-right: 100px;
+          padding-bottom: 10px;
+          font-size: 20px;
+          border: none;
+        }
 
-        
-        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: ##80808;}
+       
     </style>
 
     <script type="text/javascript">
       var data = {
         "id1": {
+          num: "Image 1 :   ",
           id: "McDonald's goodnight",
           image_src: "mcD-GN.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id2": {
+          num: "Image 2 :   ",
           id: "Nike",
           image_src: "Nike_justDoIt.gif",
-          categories: ["all", "spin"]
+          categories: ["all", "spinp"],
+          primary_category: ["spinp"],
+          secondary_categories: []
         },
         "id3": {
+          num: "Image 3 :   ",
           id: "Cone",
           image_src: "Cone_earth1.gif",
-          categories: ["all", "linear", "misc"]
+          categories: ["all", "linearp", "miscs"],
+          primary_category: ["linearp"],
+          secondary_categories: ["miscs"]
         },
         "id4": {
+          num: "Image 4 :   ",
           id: "Cloud",
           image_src: "Cloud.gif",
-          categories: ["misc", "linear", "all"]
+          categories: ["miscs", "linearp", "all"],
+          primary_category: ["linearp"],
+          secondary_categories: ["misc"]
         },
         "id5": {
+          num: "Image 5 :   ",
           id: "Mount-Sinai",
           image_src: "Mount-Sinai.gif",
-          categories: ["misc", "all", "linear"]
+          categories: ["missc", "all", "linearp"],
+          primary_category: ["linearp"],
+          secondary_categories: ["misc"]
         },
         "id6": {
+          num: "Image 6 :   ",
           id: "Nivea",
           image_src: "Nivea-NightCream.gif",
-          categories: ["all", "linear"]
+          categories: ["all", "linearp"],
+          primary_category: ["linearp"],
+          secondary_categories: []
         },
         "id7": {
+          num: "Image 7 :   ",
           id: "PowerUpCoffee",
           image_src: "PowerUpCoffee.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id8": {
+          num: "Image 8 :   ",
           id: "WOW_SOUP2",
           image_src: "WOW_SOUP2.gif",
-          categories: ["all", "misc", "spin"]
+          categories: ["all", "miscs", "spinp"],
+          primary_category: ["spinp"],
+          secondary_categories: ["misc"]
         },
         "id9": {
+          num: "Image 9 :   ",
           id: "McDFriWifi",
           image_src: "McDFriWifi.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id10": {
+          num: "Image 10 :   ",
           id: "Help_handreach",
           image_src: "Help_handreach.gif",
-          categories: ["all", "misc", "linear"]
+          categories: ["all", "miscs", "linearp"],
+          primary_category: ["linearp"],
+          secondary_categories: ["misc"]
         },
         "id11": {
+          num: "Image 11 :   ",
           id: "PeaceNotWar",
           image_src: "PeaceNotWar.gif",
-          categories: ["all", "misc", "linear"]
+          categories: ["all", "miscs", "linearp"],
+          primary_category: ["linearp"],
+          secondary_categories: ["misc"]
         },
         "id12": {
+          num: "Image 12 :   ",
           id: "The_Loop",
           image_src: "The_Loop.gif",
-          categories: ["all", "linear"]
+          categories: ["all", "linearp"],
+          primary_category: ["linearp"],
+          secondary_categories: []
         },
         "id13": {
+          num: "Image 13 :   ",
           id: "blood-lungs",
           image_src: "blood-lungs.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id14": {
+          num: "Image 14 :   ",
           id: "Nike_lung",
           image_src: "Nike_lung.gif",
-          categories: ["all", "expandcompress"]
+          categories: ["all", "expandcompressp"],
+          primary_category: ["expandcompressp"],
+          secondary_categories: []
         },
         "id15": {
+          num: "Image 15 :   ",
           id: "Nike_run",
           image_src: "nike_run.gif",
-          categories: ["all", "linear", "sequential"]
+          categories: ["all", "linearp", "sequentials"],
+          primary_category: ["linearp"],
+          secondary_categories: ["sequential"]
         },
         "id16": {
+          num: "Image 16 :   ",
           id: "Alarm-McSandwich",
           image_src: "Alarm-McSandwich.gif",
-          categories: ["all", "spin", "linear"]
+          categories: ["all", "spins", "linearp"],
+          primary_category: ["linearp"],
+          secondary_categories: ["spin"]
         },
         "id17": {
+          num: "Image 17 :   ",
           id: "US_ARMY_SAM",
           image_src: "US_ARMY_SAM.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id18": {
+          num: "Image 18 :   ",
           id: "Christmas_Starbucks",
           image_src: "Christmas_Starbucks.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id19": {
+          num: "Image 19 :   ",
           id: "Divorce",
           image_src: "Divorce.gif",
-          categories: ["all", "linear"]
+          categories: ["all", "linearp"],
+          primary_category: ["linearp"],
+          secondary_categories: []
         },
         "id20": {
+          num: "Image 20 :   ",
           id: "Money_Idea",
           image_src: "Money_Idea.gif",
-          categories: ["all", "linear", "sequential"]
+          categories: ["all", "linears", "sequentialp"],
+          primary_category: ["sequentialp"],
+          secondary_categories: ["linear"]
         },
         "id21": {
+          num: "Image 21 :   ",
           id: "Wine",
           image_src: "Wine.gif",
-          categories: ["all", "linear", "sequential"]
+          categories: ["all", "linears", "sequentialp"],
+          primary_category: ["sequentialp"],
+          secondary_categories: ["linear"]
         },
         "id22": {
+          num: "Image 22 :   ",
           id: "Gun_Car",
           image_src: "Gun_Car.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id23": {
+          num: "Image 23 :   ",
           id: "Creative_minds",
           image_src: "Creative_minds.gif",
-          categories: ["all", "misc"]
-        },
-        "id23": {
-          id: "Creative_minds",
-          image_src: "Creative_minds.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id24": {
+          num: "Image 24 :   ",
           id: "world_yours",
           image_src: "world_yours.gif",
-          categories: ["all", "misc", "spin"]
+          categories: ["all", "miscs", "spinp"],
+          primary_category: ["spinp"],
+          secondary_categories: ["misc"]
         },
         "id25": {
+          num: "Image 25 :   ",
           id: "knitting",
           image_src: "knitting.gif",
-          categories: ["all", "spin"]
+          categories: ["all", "spinp", "miscs"],
+          primary_category: ["spinp"],
+          secondary_categories: ["misc"]
         },
         "id26": {
+          num: "Image 26 :   ",
           id: "i_accept",
           image_src: "i_accept.gif",
-          categories: ["all", "sequential"]
+          categories: ["all", "sequentialp"],
+          primary_category: ["sequentialp"],
+          secondary_categories: []
         },
         "id27": {
+          num: "Image 27 :   ",
           id: "beaker",
           image_src: "beaker.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id28": {
+          num: "Image 28 :   ",
           id: "trump_tweets",
           image_src: "trump_tweets.gif",
-          categories: ["all", "linear"]
+          categories: ["all", "linearp"],
+          primary_category: ["linearp"],
+          secondary_categories: []
         },
         "id29": {
+          num: "Image 29 :   ",
           id: "bigger_brains",
           image_src: "bigger_brains.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id30": {
+          num: "Image 30 :   ",
           id: "looking_love",
           image_src: "looking_love.gif",
-          categories: ["all", "linear", "sequential", "misc"]
+          categories: ["all", "linearp", "sequentials", "miscs"],
+          primary_category: ["linearp"],
+          secondary_categories: ["sequential", "misc"]
         },
         "id31": {
+          num: "Image 31 :   ",
           id: "covering_past",
           image_src: "covering_past.gif",
-          categories: ["all", "sequential", "misc"]
+          categories: ["all", "sequentialp", "miscs"],
+          primary_category: ["sequentialp"],
+          secondary_categories: ["misc"]
         },
         "id32": {
+          num: "Image 31 :   ",
           id: "pizza",
           image_src: "pizza.gif",
-          categories: ["all", "sequential", "misc"]
+          categories: ["all", "sequentialp", "miscs"],
+          primary_category: ["sequentialp"],
+          secondary_categories: ["misc"]
         },
         "id33": {
+          num: "Image 33 :   ",
           id: "Chinas_econstats_cred",
           image_src: "Chinas_econstats_cred.gif",
-          categories: ["all", "linear", "misc"]
+          categories: ["all", "linears", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: ["linear"]
         },
-        "id34": {
+        "id53": {
+          num: "Image 34 :   ",
           id: "brexit_slow",
           image_src: "brexit_slow.gif",
-          categories: ["all", "linear"]
+          categories: ["all", "linearp"],
+          primary_category: ["linearp"],
+          secondary_categories: []
         },
         "id34": {
+          num: "Image 35 :   ",
           id: "doubt",
           image_src: "doubt.gif",
-          categories: ["all", "linear", "misc"]
+          categories: ["all", "linears", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: ["linear"],
         },
         "id35": {
+          num: "Image 36 :   ",
           id: "watermelon",
           image_src: "watermelon.gif",
-          categories: ["all", "sequential", "misc"]
+          categories: ["all", "sequentials", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: ["sequential"]
         },
         "id36": {
+          num: "Image 37 :   ",
           id: "popsicle",
           image_src: "popsicle.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id37": {
+          num: "Image 38 :   ",
           id: "mixtape",
           image_src: "mixtape.gif",
-          categories: ["all", "spin"]
+          categories: ["all", "spinp"],
+          primary_category: ["spinp"],
+          secondary_categories: []
         },
         "id38": {
+          num: "Image 39 :   ",
           id: "inflating",
           image_src: "inflating.gif",
-          categories: ["all", "expandcompress", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id39": {
+          num: "Image 40 :   ",
           id: "big_ideas",
           image_src: "big_ideas.gif",
-          categories: ["all", "spin", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id40": {
+          num: "Image 41 :   ",
           id: "merrell",
           image_src: "merrell.gif",
-          categories: ["misc", "all", "sequential"]
-        },
-        "id41": {
-          id: "spotify",
-          image_src: "spotify.gif",
-          categories: ["linear", "all", "spin"]
+          categories: ["miscp", "all", "sequentials"],
+          primary_category: ["miscp"],
+          secondary_categories: ["sequential"]
         },
         "id42": {
+          num: "Image 42 :   ",
           id: "shoppingsocial",
           image_src: "shoppingsocial.gif",
-          categories: ["all", "linear", "misc"]
+          categories: ["all", "linearp"],
+          primary_category: ["linearp"],
+          secondary_categories: []
         },
         "id43": {
+          num: "Image 43 :   ",
           id: "pop-up-shop",
           image_src: "pop-up-shop.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id44": {
+          num: "Image 44 :   ",
           id: "porschegift",
           image_src: "porschegift.gif",
-          categories: ["all", "misc", "sequential"]
+          categories: ["all", "miscp", "sequentials"],
+          primary_category: ["miscp"],
+          secondary_categories: ["sequential"]
         },
         "id45": {
+          num: "Image 45 :   ",
           id: "smoking_lungs",
           image_src: "smoking_lungs.gif",
-          categories: ["all", "misc", "sequential", "linear"]
+          categories: ["all", "miscp", "sequentials", "linears"],
+          primary_category: ["miscp"],
+          secondary_categories: ["sequential", "linears"]
         },
         "id46": {
+          num: "Image 46 :   ",
           id: "economist_1",
           image_src: "economist_1.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id47": {
+          num: "Image 47 :   ",
           id: "economist_2",
           image_src: "economist_2.gif",
-          categories: ["all", "expandcompress", "linear"]
+          categories: ["all", "linearp"],
+          primary_category: ["linearp"],
+          secondary_categories: []
         },
         "id48": {
+          num: "Image 48 :   ",
           id: "nyt1",
           image_src: "nyt1.gif",
-          categories: ["spin", "misc", "all"]
+          categories: ["spinp", "miscs", "sequentials", "all"],
+          primary_category: ["spinp"],
+          secondary_categories: ["sequential", "misc"]
         },
         "id49": {
+          num: "Image 49 :   ",
           id: "nyt2",
           image_src: "nyt2.gif",
-          categories: ["all", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
         "id50": {
+          num: "Image 50 :   ",
           id: "nyt3",
           image_src: "nyt3.gif",
-          categories: ["all", "linear", "misc"]
+          categories: ["all", "linears", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: ["linear"]
         },
         "id51": {
+          num: "Image 51 :   ",
           id: "nyt4",
           image_src: "nyt4.gif",
-          categories: ["all", "expandcompress", "misc"]
+          categories: ["all", "miscp"],
+          primary_category: ["miscp"],
+          secondary_categories: []
         },
-        "id50": {
+        "id52": {
+          num: "Image 52 :   ",
           id: "nyt5",
           image_src: "nyt5.gif",
-          categories: ["all", "misc", "spin"]
+          categories: ["all", "miscp", "spins"],
+          primary_category: ["miscp"],
+          secondary_categories: ["spin"]
       },
-
-
       }
+
 
       var labels = {
       	all: "All",
@@ -299,7 +500,6 @@
       	linear: "Linear path",
       	sequential: "Sequential addition of elements",
       	expandcompress: "Expand, compress"
-
       }
 
       var active_type = "all";
@@ -313,73 +513,108 @@
         var itemList = $("<div id='item_list'>")
         var label = $("<h1>")
         label.text(labels[active_type])
-        itemList.append(label)
-		$("#parent").append(itemList)
+		    $("#parent").append(itemList)
 
         for(d in data){
           var item = data[d]
 
           var container_div = $("<div id='item_"+item['id']+"' class='container_div'>")
 
+          var caption = item.num
+          container_div.append(caption.bold())  
           var image_div = $("<img>").attr("src", item['image_src'])
-          container_div.append(image_div)       
+          container_div.append(image_div) 
 
           for (c in item['categories']) {
           	if (item['categories'][c] == active_type) {
-				$("#item_list").append(container_div)
+				          $("#item_list").append(container_div)
           	}
           }
         }
-      }
+      }  
+      
 
       function setActive(type) {
       	active_type = type
-      	loadData()
+      	loadData() 
+      }    
+
+      function changeHeader(name) {
+         document.getElementById("myHeader").innerHTML = name;
       }
+
     </script>
 
 </head>
 <body>
-
- <body>
-
-
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Home</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="#" onClick="setActive('all')" >All </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#Linear" onClick="setActive('linear')">Linear Path</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#spin" onClick="setActive('spin')">Spin In Place</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#sequential" onClick="setActive('sequential')">Sequential Addition of Elements</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#misc" onClick="setActive('misc')">Miscellaneous</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="#misc" onClick="setActive('expandcompress')">Expand, Compress</a>
-      </li>
-    </ul>
+<!--
+  <div id = "navbar" class = "header">
+    <nav id ="nav">
+      <a href = "#linear" onClick="setActive('linear'), changeHeader('Linear')" >Linear </a>
+      <a href = "#spin" onClick="setActive('spin'),changeHeader('Spin')">Spin</a>
+      <a href = "#sequential" onClick="setActive('sequential'), changeHeader('Sequential Addition of Elements')">Sequential</a>
+      <a href = "#expandcompress" onClick="setActive('expandcompress'), changeHeader('Expand, Compress')">Expand, Compress</a>
+      <a href = "#misc" onClick="setActive('misc'), changeHeader('Miscallaneous')">Miscallaneous</a>
+    </nav>
   </div>
-</nav>
+-->
+  
 
+
+<div class="dropdown">
+
+  <button class="dropbtn">Linear</button>
+  <div class="dropdown-content">
+    <a href="#linearp" onClick="setActive('linearp'), changeHeader('Linear - Primary')"> Primary</a>
+    <a href="#linears" onClick="setActive('linears'), changeHeader('Linear - Secondary')"> Secondary</a>
+  </div>
+
+
+<div class="dropdown">
+  <button class="dropbtn">Spin</button>
+  <div class="dropdown-content">
+    <a href="#spinp" onClick="setActive('spinp'), changeHeader('Spin - Primary')"> Primary</a>
+    <a href="#spins" onClick="setActive('spins'), changeHeader('Spin - Secondary')"> Secondary</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">Sequential</button>
+  <div class="dropdown-content">
+    <a href="#sequentialp" onClick="setActive('sequentialp'), changeHeader('Sequential Addition of Elements - Primary')"> Primary</a>
+    <a href="#sequentials" onClick="setActive('sequentials'), changeHeader('Sequential Addition of Elements - Secondary')"> Secondary</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">Expand/Compress</button>
+  <div class="dropdown-content">
+    <a href="#expandcompressp" onClick="setActive('expandcompressp'), changeHeader('Expand and Compress - Primary')"> Primary</a>
+    <a href="#expandcompresss" onClick="setActive('expandcompress'), changeHeader('Expand and Compress - Secondary')"> Secondary</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">Miscallaneous</button>
+  <div class="dropdown-content">
+    <a href="#miscp" onClick="setActive('miscp'), changeHeader('Miscallaneous - Primary')"> Primary</a>
+    <a href="#miscs" onClick="setActive('miscs'), changeHeader('Miscallaneous - Secondary')"> Secondary</a>
+  </div>
+</div>
+
+
+</div>
 
     <div class="container" id="parent">
+        <h1 id="myHeader">Category:</h1>
     </div>
+
+   <!---  <div id="container2" class = "parent2">
+        <h3> Secondary category: </h3>
+    </div>
+    ---->
+
     
-
-
-
 </body>
 
 </html>
