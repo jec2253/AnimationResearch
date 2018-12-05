@@ -174,7 +174,8 @@ function loadDataPrim(){
       }
 
       var changeCount = function() {
-          $("#counter").innerHTML = "Number of animations:   " + count; 
+          $("#counter").contents().filter(function(){ return this.nodeType != 1; }).remove();
+          $("#counter").append('Number of animations:   ' + count); 
       }
 
       /*
