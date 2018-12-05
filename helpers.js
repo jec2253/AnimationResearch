@@ -169,7 +169,8 @@ function loadDataPrim(){
       }
 
      var changeHeader =  function (name) {
-         $("#myHeader").innerHTML = name;
+         $("#myHeader").contents().filter(function(){ return this.nodeType != 1; }).remove();
+         $("#myHeader").append(name)
       }
 
       var changeCount = function() {
