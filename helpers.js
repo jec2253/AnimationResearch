@@ -1,23 +1,27 @@
-      var count = 0; 
+   var count = 0; 
 
       var active_type = "all";
 
       $(document).ready(function() {
-      	loadDataPrim()
-        loadDataSec()
+        //loadDataPrim()
+        //loadDataSec()
+        loadHome()
       })
 /*
         var container_div_1 = $("<div>")
         $("container_div_1").html("")
         container_div_1.attr('class',"container")
         $("#parent").append(container_div_1)
-
         var itemList = $("<div id='item_list'>")
         var label = $("<h1>")
         label.text(labels[active_type])
         $("#parent").append(itemList)
 */
 function loadDataPrim(){
+
+       document.getElementById("parent").innerHTML = "";
+       //document.getElementById("homepage").innerHTML ="";
+       document.getElementById("homepage").style.visibility = "hidden";
 
         var container_div_1 = $("<div>")
         $("container_div_1").html("")
@@ -57,9 +61,9 @@ function loadDataPrim(){
 
 
           for (c in item['primary_category']) {
-          	if (item['primary_category'][c] == active_type) {
+            if (item['primary_category'][c] == active_type) {
                   count++
-				          //$("#item_list").append(container_div)
+                  //$("#item_list").append(container_div)
                   if (currcol <= numcol)
                   {
                     currcol++;
@@ -79,7 +83,7 @@ function loadDataPrim(){
                     $(row).append(col) 
                     $(col).html(container_div)
                   }
-          	}
+            }
           }
         }
         
@@ -88,6 +92,9 @@ function loadDataPrim(){
       }  
 
       var loadDataSec = function(){
+
+        document.getElementById("parent").innerHTML = "";
+        document.getElementById("homepage").style.visibility = "hidden";
 
         var container_div_1 = $("<div>")
         $("container_div_1").html("")
@@ -158,8 +165,8 @@ function loadDataPrim(){
 
       var setActivePrim = function(type) {
         console.log("setActivePrim")
-      	active_type = type
-      	loadDataPrim() 
+        active_type = type
+        loadDataPrim() 
       }    
 
       var setActiveSec = function(type) {
@@ -178,33 +185,34 @@ function loadDataPrim(){
           $("#counter").append('Number of animations:   ' + count); 
       }
 
+      var loadHome = function() {
+         document.getElementById("parent").innerHTML = "";
+         document.getElementById("myHeader").innerHTML = "";
+         document.getElementById("counter").innerHTML = "";
+         document.getElementById("homepage").style.visibility = "visible";
+      }
+
       /*
              /* col1 = $("<div>")
         col1.attr("class", "col-md")
         $(new_row).append(col1)
         //$(col1).html("col1")
-
         col2 = $("<div>")
         col2.attr("class", "col-md")
         $(new_row).append(col2)
         //$(col2).html("col222222")
-
         col3 = $("<div>")
         col3.attr("class", "col-md")
         $(new_row).append(col3)
         //$(col3).html("33333")
-
         col4 = $("<div>")
         col4.attr("class", "col-md")
         $(new_row).append(col4)
         //$(col4).html("444")
-
-
          new row 
         var new_row_2 = $("<div>")
         new_row_2.attr('class', "row")
         $(container_div).append(new_row_2)
-
         col1_2 = $("<div>")
         col1_2.attr("class", "col-md-4")
         $(new_row_2).append(col1_2)

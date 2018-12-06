@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <title>Animation Categories</title>
@@ -8,26 +9,44 @@
     <script type="text/javascript" src="./www/data.js"></script>
 
     <style>
+    
         .container_div{
             padding: 10px;
             text-align: center;
         }
         
         #counter {
-          font-family: Times;
-          font-size: 30px;
+          font-family: Arial;
+          font-size: 18px;
           text-align: right;
-          font-style: italic;
-          margin-top: 40px;
+          margin-top: 30px;
         }
-
         .page-header {
          padding-top: 20px;
          margin: 40px 0 20px;
          border-bottom: 1px solid #eee;
         }
 
-        }
+        #title{
+      font-family: Arial;
+      text-align: center;
+      margin-top: 60px;
+     }
+     #table {
+      margin-top: 20px;
+      padding-top: 20px;
+      font-family: Arial;
+      font-size: 40px;
+      text-align: center;
+      } 
+
+      .button {
+        background-color: #E0EEEE ;
+        border-color: white  ; 
+        font-size: 20px;
+        } /* Blue */
+
+
         
     </style>
 
@@ -49,7 +68,6 @@
           
           $("#items_list").append(container_div)
         }
-
       })
       */
     </script>
@@ -66,7 +84,7 @@
 
 <!-- https://getbootstrap.com/docs/4.0/components/navbar/#nav -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="dropdownmenu">
-  <a class="navbar-brand" href="#">Home</a>
+  <a class="navbar-brand" href="#home" onClick=loadHome() >Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -171,6 +189,29 @@
         <div id="items_list">
         </div>
     </div>
+
+    <div id = "homepage" href="#home">
+   <h1 id="title"> Animation Categories Overview </h1>
+  <table id="table" style="width:100%">
+  <tr> 
+    <th> <h2> <button class = "button" onclick="setActivePrim('linear'), changeHeader('Linear - Primary')">Linear</button> </h2> </th>
+    <th> <h2> <button class = "button" onclick="setActivePrim('spin'), changeHeader('Spin - Primary')">Spin</button> </h2> </th>
+    <th> <h2> <button class = "button" onclick="setActivePrim('sequential'), changeHeader('Sequential - Primary')">Sequential</button> </h2> </th>
+<th> <h2> <button class = "button" onclick="setActivePrim('expandcompress'), changeHeader('Expand - Primary')">Expand</button> </h2> </th>  
+<th> <h2> <button class = "button" onclick="setActivePrim('misc'), changeHeader('Miscellaneous - Primary')">Miscellaneous</button> </h2> </th>
+    
+  </tr>
+  <tr>
+
+    <td> <center>  <img src="looking_love.gif" img style='width:200px' > </center> </td>
+    <td><center> <img src="Nike_justDoIt.gif" img style='width:200px'> </center></td>
+    <td> <center>  <img src="Wine.gif" img style='width:200px'> </center> </td> 
+    <td><center> <img src="Nike_lung.gif" img style='width:200px'> </center></td> 
+    <td> <center> <img src="beaker.gif" img style='width:200px'> </center> </td> 
+
+  </tr>
+</table>
+</div>
 
 <script type="text/javascript" src="./www/helpers.js"></script>
 
